@@ -23,6 +23,13 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', (request, response) => {
+  
+	var result={}
+	result['msg']="Hello from containers node";
+        response.send(result);
+    
+}) 
 app.get('/product', (request, response) => {
     const connection = connect();
     const statement = `select id, title, description, price from product`;
