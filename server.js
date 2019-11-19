@@ -40,7 +40,7 @@ app.get('/product', (request, response) => {
     })
 }) 
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log(`Server started on 3000`);
 });
 

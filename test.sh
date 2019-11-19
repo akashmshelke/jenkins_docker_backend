@@ -18,4 +18,4 @@ fi
 docker build -t my_backend .
 
 # start the container
-docker run -itd -p 3000:3000 --name my_backend_container my_backend
+docker run -itd -p 4000:4000 --name my_backend_container my_backend
