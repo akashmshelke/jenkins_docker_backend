@@ -36,6 +36,7 @@ app.get('/product', (request, response) => {
     connection.query(statement, (error, products) => {
         console.log(error);
         console.log(products);
+        connection.end();
         response.send(products);
     })
 }) 
