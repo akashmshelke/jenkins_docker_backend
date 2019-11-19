@@ -38,10 +38,10 @@ app.get('/product', (request, response) => {
     
         if (error) {
             result['status'] = 'error'
-            result['error'] = error
+            result['error'] = "Something wrong with the database"
         } else {
             result['status'] = 'success'
-            result['data'] = data
+            result['data'] = products
         }
 
         connection.end();
