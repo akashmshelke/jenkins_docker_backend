@@ -32,12 +32,22 @@ app.get('/', (request, response) => {
 }) 
 app.get('/product', (request, response) => {
     const connection = connect();
+    var result={}
     const statement = `select id, title, description, price from product`;
     connection.query(statement, (error, products) => {
-        console.log(error);
-        console.log(products);
+    
+        if (error) {
+            result['status'] = 'error'
+            result['error'] = error
+        } else {
+            result['status'] = 'success'
+            result['data'] = data
+        }
+
         connection.end();
-        response.send(products);
+        response.send(result);
+
+       
     })
 }) 
 
